@@ -7,3 +7,12 @@ C:\Users\mikl1\source\repos\Calculator\Calculator\obj\Debug\Calculator.Propertie
 C:\Users\mikl1\source\repos\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
 C:\Users\mikl1\source\repos\Calculator\Calculator\obj\Debug\Calculator.exe
 C:\Users\mikl1\source\repos\Calculator\Calculator\obj\Debug\Calculator.pdb
+S:\Lessons\6\Prog\Lab6\Calculator\Calculator\bin\Debug\Calculator.exe.config
+S:\Lessons\6\Prog\Lab6\Calculator\Calculator\bin\Debug\Calculator.exe
+S:\Lessons\6\Prog\Lab6\Calculator\Calculator\bin\Debug\Calculator.pdb
+S:\Lessons\6\Prog\Lab6\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+S:\Lessons\6\Prog\Lab6\Calculator\Calculator\obj\Debug\Calculator.Form1.resources
+S:\Lessons\6\Prog\Lab6\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+S:\Lessons\6\Prog\Lab6\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+S:\Lessons\6\Prog\Lab6\Calculator\Calculator\obj\Debug\Calculator.exe
+S:\Lessons\6\Prog\Lab6\Calculator\Calculator\obj\Debug\Calculator.pdb

@@ -273,7 +273,6 @@
             // 
             // res
             // 
-            this.res.AutoSize = true;
             this.layout.SetColumnSpan(this.res, 4);
             this.res.Dock = System.Windows.Forms.DockStyle.Fill;
             this.res.Font = new System.Drawing.Font("Roboto", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -325,7 +324,6 @@
             this.Text = "Calculator";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.layout.ResumeLayout(false);
-            this.layout.PerformLayout();
             this.ResumeLayout(false);
 
         }

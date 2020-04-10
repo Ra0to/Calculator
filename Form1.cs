@@ -23,7 +23,7 @@ namespace Calculator
 
         private void add_symbol(int symb)
         {
-            if (res.Text == "0")
+            if (res.Text == "0" || res.Text == float.PositiveInfinity.ToString())
                 res.Text = "";
             res.Text += symb;
         }
@@ -85,7 +85,7 @@ namespace Calculator
         {
             if (res.Text.EndsWith(",") ||
                 res.Text.EndsWith("+") || res.Text.EndsWith("-") ||
-                res.Text.EndsWith("*") || res.Text.EndsWith("/")
+                res.Text.EndsWith("*") || res.Text.EndsWith("/") || res.Text == float.PositiveInfinity.ToString()
                 )
                 return;
             if (has_op)
@@ -99,7 +99,7 @@ namespace Calculator
         {
             if (res.Text.EndsWith(",") ||
                 res.Text.EndsWith("+") || res.Text.EndsWith("-") ||
-                res.Text.EndsWith("*") || res.Text.EndsWith("/")
+                res.Text.EndsWith("*") || res.Text.EndsWith("/") || res.Text == float.PositiveInfinity.ToString()
                 )
                 return;
             if (has_op)
@@ -114,7 +114,7 @@ namespace Calculator
         {
             if (res.Text.EndsWith(",") ||
                 res.Text.EndsWith("+") || res.Text.EndsWith("-") ||
-                res.Text.EndsWith("*") || res.Text.EndsWith("/")
+                res.Text.EndsWith("*") || res.Text.EndsWith("/") || res.Text == float.PositiveInfinity.ToString()
                 )
                 return;
             if (has_op)
@@ -129,7 +129,7 @@ namespace Calculator
         {
             if (res.Text.EndsWith(",") ||
                 res.Text.EndsWith("+") || res.Text.EndsWith("-") ||
-                res.Text.EndsWith("*") || res.Text.EndsWith("/")
+                res.Text.EndsWith("*") || res.Text.EndsWith("/") || res.Text == float.PositiveInfinity.ToString()
                 )
                 return;
             if (has_op)
@@ -144,7 +144,7 @@ namespace Calculator
         {
             if (has_dot || 
                 res.Text.EndsWith("+") || res.Text.EndsWith("-") ||
-                res.Text.EndsWith("*") || res.Text.EndsWith("/")
+                res.Text.EndsWith("*") || res.Text.EndsWith("/") || res.Text == float.PositiveInfinity.ToString()
                 )
                 return;
             res.Text += ",";
@@ -167,7 +167,10 @@ namespace Calculator
 
         private void Calculate()
         {
-            var fir = Regex.Match(res.Text, @"(-?\d+(,\d+)?)[-+*/]").Value;
+            var reg = Regex.Match(res.Text, @"(-?\d+(,\d+)?)[-+*/]");
+            if (!reg.Success)
+                return;
+            var fir = reg.Value;
             var op = fir.Last();
             var y = float.Parse(res.Text.Substring(fir.Length));
             fir = fir.Substring(0, fir.Length - 1);
@@ -187,6 +190,10 @@ namespace Calculator
                     res.Text = (x / y).ToString();
                     break;
             }
+            if (res.Text.Contains('E'))
+                res.Text = float.PositiveInfinity.ToString();
+            if (res.Text.Contains(','))
+                has_dot = true;
             Clipboard.SetText(res.Text);
         }
         void Form1_KeyPress(object sender, KeyPressEventArgs e)
